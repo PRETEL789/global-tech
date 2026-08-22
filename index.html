@@ -511,55 +511,18 @@ header .container {
     <!-- SECTION MÉDIAS             -->
     <!-- ========================== -->
    <!-- ====== SECTION MÉDIAS ====== -->
+<!-- ====== SECTION MÉDIAS ====== -->
 <section id="medias" style="padding:60px 0; background:#eef3f9;">
     <div class="container" style="max-width:1200px; margin:0 auto; padding:0 20px;">
         <h2 style="text-align:center; font-size:32px; margin-bottom:10px; color:#0b1a2e;">Nos Médias</h2>
-        <p style="text-align:center; color:#3d4f62; margin-bottom:40px;">Découvrez nos réalisations en images et en vidéos</p>
-
-        <h3 style="text-align:center; margin-bottom:20px; color:#f39c12;">Galerie Photos</h3>
+        <p style="text-align:center; color:#3d4f62; margin-bottom:40px;">Découvrez nos réalisations en images</p>
         
-        <!-- CONTENEUR DES PHOTOS (VIDE POUR L'INSTANT) -->
-        <div id="galerie-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px; margin-bottom:50px;">
-            <!-- Les photos seront ajoutées ici automatiquement par JavaScript -->
+        <!-- CONTENEUR POUR LES PHOTOS -->
+        <div id="galerie-container" style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px;">
+            <!-- Le script va ajouter les photos ici -->
         </div>
     </div>
 </section>
-
-<!-- ====== SCRIPT JAVASCRIPT POUR CHARGER LES PHOTOS AUTOMATIQUEMENT ====== -->
-<script>
-    // LISTE DES PHOTOS (AJOUTE ICI TOUS TES NOMS DE FICHIERS)
-    const photos = [
-        "photo1.jpg",
-        "photo2.jpg",
-        "photo3.jpg",
-        "photo4.jpg",
-        "photo5.jpg"
-        // ➕ AJOUTE AUTANT DE PHOTOS QUE TU VEUX ICI !
-        // Exemple : "photo6.jpg", "photo7.jpg", ...
-    ];
-
-    // SÉLECTIONNE LE CONTENEUR
-    const container = document.getElementById('galerie-container');
-
-    // POUR CHAQUE PHOTO, CRÉE UNE CARTE
-    photos.forEach(function(nom) {
-        const div = document.createElement('div');
-        div.style.cssText = 'background:#fff; padding:10px; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.08);';
-        
-        const img = document.createElement('img');
-        img.src = 'images/' + nom;
-        img.alt = nom;
-        img.style.cssText = 'width:100%; height:250px; object-fit:cover; border-radius:12px;';
-        
-        const p = document.createElement('p');
-        p.style.cssText = 'text-align:center; margin-top:8px; font-weight:600;';
-        p.textContent = nom.replace('.jpg', '').replace('.png', ''); // Enlève l'extension pour le titre
-        
-        div.appendChild(img);
-        div.appendChild(p);
-        container.appendChild(div);
-    });
-</script>
                     
     <!-- ========================== -->
     <!-- FORMULAIRE DE DEVIS        -->
