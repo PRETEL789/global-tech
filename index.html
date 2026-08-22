@@ -645,27 +645,21 @@ header .container {
             </div>
         </div>
     </footer>
-
-   <script>
-    // LISTE DE TOUTES TES PHOTOS
+<script>
+    // 1. La liste de toutes tes photos
     const photos = [
         "photo1.jpg",
         "photo2.jpg",
         "photo3.jpg",
         "photo4.jpg",
-        "photo5.jpg",
-        "photo6.jpg",
-        "photo7.jpg",
-        "photo8.jpg",
-        "photo9.jpg",
-        "photo10.jpg"
-        // AJOUTE ICI TOUTES TES AUTRES PHOTOS
+        "photo5.jpg"
+        // Ajoute ici les noms de toutes tes photos (ex: "photo6.jpg", "photo7.jpg", ...)
     ];
 
-    // SÉLECTIONNE LE CONTENEUR
+    // 2. On attrape le conteneur
     const container = document.getElementById('galerie-container');
 
-    // POUR CHAQUE PHOTO, CRÉE UNE CARTE
+    // 3. On crée une carte pour chaque photo
     photos.forEach(function(nom) {
         const div = document.createElement('div');
         div.style.cssText = 'background:#fff; padding:10px; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.08);';
