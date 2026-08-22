@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GLOBAL TECHNOLOGIE F.E S.A.R.L</title>
+    <style>
+        /* ---------- RESET ET POLICE ---------- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f7fc;
+            color: #1e2a3a;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* ---------- HEADER ---------- */
+        header {
+            background: #201f1f;
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 4px solid #f39c12;
+        }
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    max-width: 100%;
+    padding: 0 20px;
+    margin: 0 auto;
+}
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            display: block;
+            font-size: 14px;
+            font-weight: 300;
+            color: #f39c12;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: #f39c12;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #f39c12;
+        }
+
+        /* ---------- BANNIÈRE HERO ---------- */
+        .hero {
+            background: linear-gradient(135deg, #f8f4f4 0%, #f8f4f4 100%);
+            color: #050505;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 15px;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            color: #000000;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0 10px 10px 0;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn-orange {
+            background: #f39c12;
+            color: #0b1a2e;
+        }
+
+        .btn-orange:hover {
+            background: #e08e0b;
+            transform: scale(1.03);
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: #f39c12;
+            border: 2px solid #f39c12;
+        }
+
+        .btn-outline:hover {
+            background: #f39c12;
+            color: #0b1a2e;
+        }
+
+        /* ---------- SECTION SERVICES ---------- */
+        .services {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .services h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #0b1a2e;
+        }
+
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 25px;
+        }
+
+        .service-card {
+            background: #f4f7fc;
+            padding: 25px 15px;
+            border-radius: 12px;
+            text-align: center;
+            border-left: 4px solid #f39c12;
+            transition: 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        }
+
+        .service-card h3 {
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #0b1a2e;
+        }
+
+        .service-card p {
+            color: #3d4f62;
+            font-size: 15px;
+        }
+
+        /* ---------- POURQUOI NOUS CHOISIR ---------- */
+        .why-us {
+            padding: 60px 0;
+            background: #eef3f9;
+        }
+
+        .why-us h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 40px;
+            color: #0b1a2e;
+        }
+
+        .why-item {
+            background: #fff;
+            padding: 25px;
+            border-radius: 12px;
+            border-top: 4px solid #f39c12;
+        }
+
+        .why-item h3 {
+            color: #0b1a2e;
+            margin-bottom: 6px;
+        }
+
+        /* ---------- FORMULAIRE DE DEVIS ---------- */
+        .devis {
+            padding: 60px 0;
+            background: #fff;
+        }
+
+        .devis h2 {
+            text-align: center;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+
+        .devis .sous-titre {
+            text-align: center;
+            color: #3d4f62;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 700px;
+            margin: 0 auto;
+            background: #f8faff;
+            padding: 35px 40px;
+            border-radius: 16px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: #0b1a2e;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #d0dbe8;
+            border-radius: 8px;
+            font-size: 15px;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            resize: vertical;
+        }
+
+        .form-group input[type="file"] {
+            padding: 8px 0;
+            border: none;
+        }
+
+        .btn-submit {
+            background: #0b1a2e;
+            color: #fff;
+            padding: 14px 40px;
+            border: none;
+            border-radius: 30px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            width: 100%;
+        }
+
+        .btn-submit:hover {
+            background: #f39c12;
+            color: #0b1a2e;
+        }
+
+        /* ---------- SUIVI DES DEMANDES ---------- */
+        .suivi {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .suivi input {
+            padding: 10px 18px;
+            border-radius: 30px;
+            border: 1px solid #d0dbe8;
+            width: 250px;
+        }
+
+        .suivi .btn-outline {
+            padding: 10px 25px;
+        }
+
+        /* ---------- FOOTER ---------- */
+        footer {
+            background: #201f1f;
+            color: #c8d4e0;
+            padding: 40px 0 20px;
+        }
+
+        footer .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        footer h4 {
+            color: #fff;
+            margin-bottom: 12px;
+        }
+
+        footer ul {
+            list-style: none;
+        }
+
+        footer ul li {
+            margin-bottom: 6px;
+        }
+
+        footer a {
+            color: #c8d4e0;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            color: #f39c12;
+        }
+
+        footer .copyright {
+            text-align: center;
+            border-top: 1px solid #1a334a;
+            padding-top: 20px;
+            font-size: 14px;
+            color: #7a8fa0;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+        @media (max-width: 768px) {
+    /* === TEXTE === */
+    .hero p {
+        font-size: 14px;  /* ✅ Corrigé : avant c'était "1/px" (invalide) */
+    }
+
+    /* === FORMULAIRE === */
+    form {
+        padding: 20px;
+    }
+
+    /* === SUIVI (champ email) === */
+    .sutivi input {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* === IMAGES : Adaptation sur mobile === */
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* === IMAGE DE BANNIÈRE (pleine largeur) === */
+    .hero img {
+        width: 100%;
+        height: auto;
+    }
+
+    /* === IMAGE DANS LE CONTENU (avec coins arrondis) === */
+    .contenu img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+}
+    </style>
+</head>
+<body style="background:#f4f7fc; margin:0; padding:0;">
+
+    <!-- ========================== -->
+    <!-- HEADER (En-tête)           -->
+    <!-- ========================== -->
+ <header>
+    <div class="container" style="max-width:100%; padding:0 20px;">
+        <!-- LIGNE 1 : Logo (à gauche) + Hamburger (à droite) -->
+        <div style="display:flex; justify-content:space-between; align-items:flex-start; padding:10px 0;">
+            
+            <!-- LOGO + TITRE en dessous -->
+            <div style="display:flex; flex-direction:column; align-items:flex-start;">
+                <img src="images/logo-entreprise2.PNG" alt="GLOBAL TECHNOLOGIE" style="height:50px; width:auto;" />
+                <h1 style="font-size:18px; font-weight:400; color:#fff; margin:5px 0 0 0; font-family:'Arial', sans-serif;">GLOBAL TECHNOLOGIE</h1>
+            </div>
+
+            <!-- 3 points (☰) à DROITE -->
+            <div id="menuToggle" style="display:flex; flex-direction:column; gap:5px; cursor:pointer; padding:10px; margin-top:5px;">
+                <span style="display:block; width:30px; height:4px; background:#fff; border-radius:2px;"></span>
+                <span style="display:block; width:30px; height:4px; background:#fff; border-radius:2px;"></span>
+                <span style="display:block; width:30px; height:4px; background:#fff; border-radius:2px;"></span>
+            </div>
+        </div>
+
+        <!-- LIGNE 2 : Nav (caché par défaut) -->
+        <nav id="navMenu" style="display:none; background:rgba(255,255,255,0.05); padding:15px 0; border-top:2px solid #f39c12; margin-top:10px;">
+            <ul style="list-style:none; display:flex; flex-direction:column; align-items:center; gap:8px; margin:0; padding:10px 0;">
+                <li><a href="#accueil" style="color:#fff; text-decoration:none; font-family:'Times New Roman', Times, serif; font-size:16px; font-weight:400;">Accueil</a></li>
+                <li><a href="#services" style="color:#fff; text-decoration:none; font-family:'Times New Roman', Times, serif; font-size:16px; font-weight:400;">Services</a></li>
+                <li><a href="#medias" style="color:#fff; text-decoration:none; font-family:'Times New Roman', Times, serif; font-size:16px; font-weight:400;">Médias</a></li>
+                <li><a href="#devis" style="color:#fff; text-decoration:none; font-family:'Times New Roman', Times, serif; font-size:16px; font-weight:400;">Devis</a></li>
+                <li><a href="#apropos" style="color:#fff; text-decoration:none; font-family:'Times New Roman', Times, serif; font-size:16px; font-weight:400;">À propos</a></li>
+                <li><a href="#contact" style="color:#fff; text-decoration:none; font-family:'Times New Roman', Times, serif; font-size:16px; font-weight:400;">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+    <!-- ========================== -->
+    <!-- ACCUEIL (BANNIÈRE HERO)    -->
+    <!-- ========================== -->
+    <section class="hero" id="accueil">
+        <div class="container">
+            <img src="images/logo-entreprise.png" alt="GLOBAL TECHNOLOGIE" style="max-width:50%; height:auto; display:block; margin:0 auto;" />
+            <p>Nous mettons notre savoir-faire au service de vos projets.<br>Notre mission est de vous fournir des solutions innovantes et de qualité, fiables et adaptées à vos besoins.</p>
+            <a href="#devis" class="btn btn-orange">Demander un devis</a>
+            <a href="#contact" class="btn btn-outline">Nous contacter</a>
+        </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- NOS SERVICES               -->
+    <!-- ========================== -->
+    <section class="services" id="services">
+        <div class="container">
+            <h2>Nos Services</h2>
+            <div class="grid-3">
+                <div class="service-card">
+                    <h3>⚡ ELECTRICITE</h3>
+                    <p>Installations de bâtiment</p>
+                    <p>Installations photovoltaïques</p>
+                    <p>climatisation et froid</p>
+                    <p>Maintenance générale</p>
+                    <p>Dépannage Général</p>
+                </div>
+                <div class="service-card">
+                    <h3>🔧 PLOMBERIE</h3>
+                    <p>Installations sanitaires</p>
+                    <p>installations des gouttières</p>
+                    <p>installations citerne d'eau</p>
+                    <p>depannage plomberie</p>
+                </div>
+                <div class="service-card">
+                    <h3>🏠 Aménagement intérieur</h3>
+                    <p> Peinture intérieure</p>
+                    <p> Masticage et enduisage</p>
+                    <p> Plafonds et faux plafonds</p>
+                    <p> Pose de cloisons / séparation</p>
+                    <p> Pose et finition des portes et fenêtres</p>
+                    <p> Menuiserie intérieure</p>
+                    <p> Carrelage et revêtement de sol </p>
+                    <p> Décoration murale </p>
+                    <p> Installation et fixation TV murale </p>
+                    <p>  Petits travaux et réparations intérieures </p>
+                </div>
+                <div class="service-card">
+                    <h3>🔧 🎯 GESTION DE PROJETS</h3>
+                    <p>Etude et planification</p>
+                    <p>Coordination des équipes</p>
+                    <p>Gestion des risques</p>
+                    <p>Respect des délais</p>
+                </div>
+                <div class="service-card">
+                    <h3>🚚 LOGISTIQUE ET DISTRIBUTION</h3>
+                    <p>Transport Des Équipements et Matériaux</p>
+                </div>
+                <div class="service-card">
+                    <h3>🛠️ Quincaillerie</h3>
+                    <p>Vente et fournitures de matériaux electrique et plomerie </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- POURQUOI NOUS CHOISIR      -->
+    <!-- ========================== -->
+    <section class="why-us" id="apropos">
+        <div class="container">
+            <h2>🌍 Pourquoi Global Technologie ?</h2>
+            <div class="grid-3">
+                <div class="why-item">
+                    <h3>🔧 Expertise complète</h3>
+                    <p><strong>10 spécialités, une maîtrise totale.</strong> De l'électricité industrielle à la plomberie, en passant par l'aménagement intérieur et la gestion de projets, nos experts qualifiés interviennent sur tout le secteur minier, industriel et résidentiel. Chaque étape est contrôlée, de l'étude à la livraison.</p>
+                </div>
+                <div class="why-item">
+                    <h3>⏱️ Rapidité & Logistique</h3>
+                    <p><strong>Logistique maîtrisée, délais tenus.</strong> Grâce à notre propre flotte et quincaillerie, nous arrivons sur site avec tout le nécessaire. Fini les ruptures de stock : nos équipes avancent sans interruption jusqu'à la fin du chantier.</p>
+                </div>
+                <div class="why-item">
+                    <h3>🛡️ Qualité garantie</h3>
+                    <p><strong>Des finitions qui tiennent dans le temps.</strong> Normes de sécurité rigoureuses, matériaux certifiés, contrôles qualité systématiques. Chaque ouvrage est garanti et traçable dans la durée.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================== -->
+    <!-- SECTION MÉDIAS             -->
+    <!-- ========================== -->
+    <section id="medias" style="padding:60px 0; background:#eef3f9;">
+        <div class="container">
+            <h2 style="text-align:center; font-size:32px; margin-bottom:10px; color:#0b1a2e;">📸 Nos Médias</h2>
+            <p style="text-align:center; color:#3d4f62; margin-bottom:40px;">Découvrez nos réalisations en images et en vidéos</p>
+
+            <!-- Galerie Photos -->
+            <h3 style="text-align:center; margin-bottom:20px; color:#f39c12;">🖼️ Galerie Photos</h3>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px,1fr)); gap:25px; margin-bottom:50px;">
+
+                <div style="background:#fff; padding:10px; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+                    <img src="images/photo1.jpg" alt="Photo 1" style="width:100%; height:250px; object-fit:cover; border-radius:12px;" />
+                    <p style="text-align:center; margin-top:8px; font-weight:600;">Photo 1</p>
+                </div>
+
+                <div style="background:#fff; padding:10px; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+                    <img src="images/photo2.jpg" alt="Photo 2" style="width:100%; height:250px; object-fit:cover; border-radius:12px;" />
+                    <p style="text-align:center; margin-top:8px; font-weight:600;">Photo 2</p>
+                </div>
+
+                <div style="background:#fff; padding:10px; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+                    <img src="images/photo3.jpg" alt="Photo 3" style="width:100%; height:250px; object-fit:cover; border-radius:12px;" />
+                    <p style="text-align:center; margin-top:8px; font-weight:600;">Photo 3</p>
+                </div>
+
+            </div>
+
+            <!-- Vidéos -->
+            <h3 style="text-align:center; margin-bottom:20px; color:#f39c12;">🎥 Vidéos</h3>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px,1fr)); gap:30px;">
+
+                <div style="background:#fff; padding:15px; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+                    <div style="position:relative; padding-bottom:56.25%; height:0;">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_1" 
+                                style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:12px;">
+                        </iframe>
+                    </div>
+                    <p style="text-align:center; margin-top:10px; font-weight:600;">Vidéo 1</p>
+                </div>
+
+                <div style="background:#fff; padding:15px; border-radius:16px; box-shadow:0 4px 15px rgba(0,0,0,0.08);">
+                    <div style="position:relative; padding-bottom:56.25%; height:0;">
+                        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" 
+                                style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; border-radius:12px;">
+                        </iframe>
+                    </div>
+                    <p style="text-align:center; margin-top:10px; font-weight:600;">Vidéo 2</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+                    
+    <!-- ========================== -->
+    <!-- FORMULAIRE DE DEVIS        -->
+    <!-- ========================== -->
+    <!-- ========================== -->
+<!-- FORMULAIRE DE DEVIS        -->
+<!-- ========================== -->
+<section class="devis" id="devis">
+    <div class="container">
+        <h2>Demande de Devis</h2>
+        <p class="sous-titre">Recevez une estimation claire et sans engagement</p>
+
+        <form name="devis" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+    <!-- Champ caché OBLIGATOIRE pour Netlify -->
+    <input type="hidden" name="form-name" value="devis" />
+    <input type="hidden" name="redirect" value="/suivi-demande.html" />
+    
+    <!-- Champ caché pour recevoir les notifications par email -->
+    <input type="hidden" name="email" value="mushilepretel@gmail.com" />
+
+    <!-- Champ anti-spam (caché pour les humains, visible pour les robots) -->
+    <p style="display:none;">
+        <label>Ne remplissez pas ce champ : <input name="bot-field" /></label>
+    </p>
+
+    <!-- Nom -->
+    <div class="form-group">
+        <label for="nom">Nom complet *</label>
+        <input type="text" id="nom" name="nom" placeholder="Votre nom et prénom" required />
+    </div>
+
+    <!-- Email -->
+    <div class="form-group">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" placeholder="exemple@email.com" required />
+    </div>
+
+    <!-- Téléphone -->
+    <div class="form-group">
+        <label for="telephone">Téléphone</label>
+        <input type="tel" id="telephone" name="telephone" placeholder="+243 XX XXX XXXX" />
+    </div>
+
+    <!-- Service -->
+    <div class="form-group">
+        <label for="service">Service</label>
+        <select id="service" name="service">
+            <option value="">-- Choisir un service --</option>
+            <option value="electricite">Électricité</option>
+            <option value="plomberie">Plomberie</option>
+            <option value="amenagement">Aménagement intérieur</option>
+            <option value="gestion-projets">Gestion de projets</option>
+            <option value="logistique">Logistique et distribution</option>
+            <option value="quincaillerie">Quincaillerie</option>
+        </select>
+    </div>
+
+    <!-- Message -->
+    <div class="form-group">
+        <label for="message">Décrivez votre projet / besoin *</label>
+        <textarea id="message" name="message" placeholder="Décrivez-nous votre projet en quelques mots..." required></textarea>
+    </div>
+
+    <!-- Document -->
+    <!-- Document (optionnel) - Envoi vers Google Drive -->
+<div class="form-group">
+    <label for="fichier">📎 Document, photo ou vidéo (optionnel)</label>
+    <input type="file" id="fichier" name="fichier" multiple accept="*/*" />
+    <small style="color:#666; font-size:12px;">Vous pouvez sélectionner plusieurs fichiers (images, vidéos, PDF, etc.)</small>
+</div>
+    <!-- Bouton d'envoi -->
+    <button type="submit" class="btn-submit">Envoyer la demande</button>
+</form>
+
+        <!-- Suivi des demandes -->
+        <div class="suivi">
+            <p style="margin-top:25px; font-weight:600;">🔍 Suivre mes demandes</p>
+            <input type="email" placeholder="Votre email" />
+            <a href="#" class="btn btn-outline" style="display:inline-block; padding:10px 30px; background:#0b1a2e; color:#fff; border:none;">Voir</a>
+        </div>
+    </div>
+</section>
+
+    <!-- ========================== -->
+    <!-- CONTACT (FOOTER)           -->
+    <!-- ========================== -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>GLOBAL TECHNOLOGIE F.E.S.A.R.L</h4>
+                    <p>Electricité, plomberie, aménagement intérieur, gestion des projets, logistique et distribution, quincaillerie</p>
+                </div>
+                <div>
+                    <h4>Contact</h4>
+                    <p>S/R.D.Congo<br />Lualaba / Kolwezi <br> Manika</p>
+                    <p>📞 +243 977736306 / 818003464</p>
+                    <p>✉️ infogtfesarl@gmail.com</p>
+                </div>
+                <div>
+                    <h4>Identification</h4>
+                    <p><strong>N° IMPÔT :</strong> </p>
+                    <p><strong>ID NATIONALE :</strong> </p>
+                    <p><strong>RCCM :</strong> </p>
+                </div>
+                <div>
+                    <h4>Navigation</h4>
+                    <ul>
+                        <li><a href="#accueil">Accueil</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#medias">Médias</a></li>
+                        <li><a href="#devis">Devis</a></li>
+                        <li><a href="#apropos">À propos</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; GLOBAL TECHNOLOGIE F.E.S.A.R.L — Tous droits réservés.
+            </div>
+        </div>
+    </footer>
+
+   <script>
+    document.getElementById('menuToggle').addEventListener('click', function() {
+        var menu = document.getElementById('navMenu');
+        if (menu.style.display === 'none' || menu.style.display === '') {
+            menu.style.display = 'block';
+        } else {
+            menu.style.display = 'none';
+        }
+    });
+</script>
+</body>
+</html>

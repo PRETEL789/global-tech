@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suivi de votre demande - Global Technologie</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+        }
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+        h1 {
+            color: #0b1a2e;
+            font-size: 24px;
+        }
+        p {
+            color: #333;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .email {
+            background: #f0f4ff;
+            padding: 10px;
+            border-radius: 8px;
+            font-weight: bold;
+            color: #0b1a2e;
+        }
+        .btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 30px;
+            background: #0b1a2e;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 8px;
+        }
+        .btn:hover {
+            background: #1a2e4a;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>📋 Suivi de votre demande</h1>
+        <p>Bonjour,</p>
+        <p>Votre demande a bien été reçue et sera traitée sous <strong>24 à 48h</strong>.</p>
+        <p><strong>Votre email :</strong></p>
+        <p class="email" id="email-client">Chargement...</p>
+        <p>Nous vous contacterons prochainement avec une proposition détaillée.</p>
+        <a href="https://globaltechnologie.netlify.app" class="btn">Retour au site</a>
+    </div>
+
+    <script>
+        // Récupère l'email du client depuis l'URL
+        const params = new URLSearchParams(window.location.search);
+        const email = params.get('email') || 'Non renseigné';
+        document.getElementById('email-client').textContent = email;
+    </script>
+</body>
+</html>
